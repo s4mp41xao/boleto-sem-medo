@@ -85,9 +85,9 @@ export function ChatInterface() {
       if (file) formData.append('file', file);
       formData.append('context', input);
 
-      // Replace with your actual API endpoint
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-      const response = await fetch(`${apiUrl}/chat/upload`, {
+      // Use relative URL in production (Vercel), localhost in development
+      const apiUrl = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '' : 'http://localhost:3000');
+      const response = await fetch(`${apiUrl}/api/chat/upload`, {
         method: 'POST',
         body: formData,
       });
