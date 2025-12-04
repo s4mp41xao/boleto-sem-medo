@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 50 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 50 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 50 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 100% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* GitHub Dark Dimmed / Modern Dark Theme Base */
+    --background: 220 13% 18%;
+    /* #22272e - GitHub Dimmed Background */
+    --foreground: 220 13% 91%;
+    /* #adbac7 - Text */
+
+    --card: 220 13% 14%;
+    /* Darker than background (was 22%) */
+    --card-foreground: 220 13% 91%;
+
+    --popover: 220 13% 14%;
+    --popover-foreground: 220 13% 91%;
+
+    /* Primary Color - C6 Bank / Carbon Style (Yellow/Gold Accent or Sleek Blue?) 
+       Let's go with a sleek Carbon/Blue-ish Grey for primary UI elements 
+       and maybe a yellow accent for important things if needed, but for now standard primary.
+       Actually, let's stick to a nice blue-ish slate for primary actions. */
+    --primary: 217 33% 17%;
+    /* Darker button bg */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Agent Bubble: Very Light (Almost White) for maximum contrast */
+    --muted: 210 20% 96%;
+    --muted-foreground: 222 47% 11%;
+    /* Dark text for readability on light bubble */
+
+    --accent: 216 28% 25%;
+    /* Hover states */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 348 90% 60%;
+    /* Red for errors */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 28%;
+    /* Subtle borders */
+    --input: 220 13% 28%;
+    --ring: 224 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
