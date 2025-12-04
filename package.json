@@ -1,5 +1,25 @@
 {
+  "name": "boleto-sem-medo",
+  "version": "1.0.0",
+  "description": "Sistema de análise de boletos com IA",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix client & npm run start:dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run start:dev --prefix server",
+    "build": "npm run build --prefix client && npm run build --prefix server",
+    "build:client": "npm run build --prefix client",
+    "build:server": "npm run build --prefix server",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "vercel-build": "npm run build:client",
+    "check-security": "./check-security.sh",
+    "precommit": "./check-security.sh"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.24.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
